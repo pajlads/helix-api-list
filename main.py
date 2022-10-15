@@ -46,7 +46,7 @@ def main():
 
         category = api_reference_data[0].text
         name = api_reference_data[1].text
-        description = api_reference_data[2].text
+        description = api_reference_data[2].text.strip()
         api_endpoints.append(APIEndpoint(category, name, description))
 
     print(APIEndpoint.schema().dumps(api_endpoints, many=True))
